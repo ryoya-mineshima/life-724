@@ -1,38 +1,38 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="tweet__wrapper">
+      <p class="tweet__hedding">
         <%= @tweet.title%>
       </p>
-      <%= link_to "by" + @tweet.user.name, user_path(@tweet.user.id), class: :prototype__user %>
+      <%= link_to "by " + @tweet.user.name, user_path(@tweet.user.id), class: :prototype__user %>
       <% if user_signed_in? && current_user.id == @tweet.user_id %>
-        <div class="prototype__manage">
+        <div class="tweet__manage">
           <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
           <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
-      <div class="prototype__image">
+      <div class="tweet__image">
         <%= image_tag @tweet.image %>
       </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+      <div class="tweet__body">
+        <div class="tweet__detail">
+          <p class="detail__title">コンテンツ</p>
           <p class="detail__message">
             <%= @tweet.content %>
           </p>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+        <div class="tweet__detail">
+          <p class="detail__title">URL【YouTube】</p>
           <p class="detail__message">
-            <%= @tweet.url %>
+            <%= Rinku.auto_link(@tweet.url, :all, 'target="_blank"').html_safe %>
           </p>
         </div>
       </div>
-      <div class="prototype__comments">
+      <div class="tweet__comments">
         <% if user_signed_in? %>
           <%= form_with(model: [@tweet, @comment],local: true) do |f| %>
             <div class="field">
-              <%= f.label :text, "コメント" %><br />
+              <h4><%= f.label :text, "＜コメント投稿＞" %><br /></h4>
               <%= f.text_field :text, id:"comment_text" %>
             </div>
             <div class="actions">
@@ -40,12 +40,13 @@
             </div>
           <% end %> 
         <% end %>
+        <h4>＜コメント一覧＞</h4>
         <ul class="comments_lists">
             <li class="comments_list">
             <% @comments.each do |comment| %>
               <p>
+                <strong><%= link_to comment.user.name, "/users/#{comment.user_id}" %>：</strong>
                 <%= comment.text %>
-                <%= link_to (comment.user.name), "/users/#{comment.user_id}" %>
               </p>
             <% end %>
             </li>
