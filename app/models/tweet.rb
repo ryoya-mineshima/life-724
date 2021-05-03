@@ -1,9 +1,11 @@
 class Tweet < ApplicationRecord
 
-  validates :title, presence: true
-  validates :content, presence: true
-  validates :url, presence: true, format: /\A#{URI::regexp(%w(http https))}\z/
-  validates :image, presence: true
+  with_options presence: true do
+    validates :title
+    validates :content
+    validates :url, format: /\A#{URI::regexp(%w(http https))}\z/
+    validates :image
+  end
 
   belongs_to :user
   has_many :comments
