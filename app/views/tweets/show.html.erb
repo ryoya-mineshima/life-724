@@ -4,11 +4,11 @@
       <p class="tweet__hedding">
         <%= @tweet.title%>
       </p>
-      <%= link_to "by " + @tweet.user.name, user_path(@tweet.user.id), class: :prototype__user %>
+      <%= link_to "投稿者：" + @tweet.user.name, user_path(@tweet.user.id), class: :tweet__user %>
       <% if user_signed_in? && current_user.id == @tweet.user_id %>
         <div class="tweet__manage">
-          <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :prototype__btn %>
-          <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", edit_tweet_path(@tweet.id), class: :tweet__btn %>
+          <%= link_to "削除する", tweet_path(@tweet.id), method: :delete, class: :tweet__btn %>
         </div>
       <% end %>
       <div class="tweet__image">

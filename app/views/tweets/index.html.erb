@@ -5,9 +5,97 @@
         <%= "ようこそ" %>
         <%= link_to current_user.name + "さん", user_path(current_user.id),class: :greeting__link%>
       </div>
+      <div class="top__title">
+        <h1>◆みんなのオススメ！ YouTube動画一覧◆</h1>
+      </div>
+      <div class="card__wrapper">
+        <%= render partial: 'tweet', collection: @tweets %>
+      </div>
+    <% else %>
+      <div class="web__page">
+        <div class="web__title">
+          <h2 class="text">
+            新規登録・ログインをして
+            <br>
+            オススメのYouTube動画を投稿しよう！
+            <br>
+            ログインするとみんなの投稿を
+            <br>
+            見ることができます！
+            <br>
+            何か一つでもあなたの人生を変える
+            <br>
+            きっかけを提供したい。
+            <br>
+            そんな思いからこのサイトを
+            <br>  
+            作成しました。
+          </h2>
+          <%= image_tag "sample.jpg", class: :web__img %>
+        </div>
+      </div>
+      <div class="top__title">
+        <h1>◆運営者オススメ！ マコなり社長YouTube動画（2021年5月5日時点）◆</h1>
+      </div>
+      <div class="top__ranking">
+        <div class="ranking">
+          <h3>◇生産性系動画ランキング◇</h3>
+          <%= link_to "1位 仕事が遅い人の「やっていること」トップ3", "https://youtu.be/Wx1J-8J7YtE", class: :ranking__btn %>
+            <%= link_to image_tag("sigotoosoi.jpg", class: :ranking__img), "https://youtu.be/Wx1J-8J7YtE" %>
+          <%= link_to "2位 【今すぐやめろ】 「時間の無駄」でしかない毎日の行動TOP5", "https://youtu.be/yxz2TSuggc0", class: :ranking__btn %>
+            <%= link_to image_tag("imasugu.jpg", class: :ranking__img), "https://youtu.be/yxz2TSuggc0" %>
+          <%= link_to "3位 99%の人は「考える」が出来ない", "https://youtu.be/gKJUWUMfAFo", class: :ranking__btn %>
+            <%= link_to image_tag("99kangaeru.jpg", class: :ranking__img), "https://youtu.be/gKJUWUMfAFo" %>
+        </div>
+        <div class="ranking">
+          <h3>◇ルーティーン系動画ランキング◇</h3>
+          <%= link_to "1位 朝に絶対にやってはいけないワースト5", "https://youtu.be/_iyWi5wnwCg", class: :ranking__btn %>
+            <%= link_to image_tag("asa.jpg", class: :ranking__img), "https://youtu.be/_iyWi5wnwCg" %>
+          <%= link_to "2位 寝る前に絶対にやってはいけないワースト5", "https://youtu.be/-R-HQB-gH98", class: :ranking__btn %>
+            <%= link_to image_tag("yoru.jpg", class: :ranking__img), "https://youtu.be/-R-HQB-gH98" %>
+          <%= link_to "3位 【厳禁】 家でやってはいけないことTOP5", "https://youtu.be/0dyVO0wILEs", class: :ranking__btn %>
+            <%= link_to image_tag("zitaku.jpg", class: :ranking__img), "https://youtu.be/0dyVO0wILEs" %>
+        </div>
+        <div class="ranking">
+          <h3>◇人間関係系動画ランキング◇</h3>
+          <%= link_to "1位 あなたの人生で絶対に無視すべき人", "https://youtu.be/DlZvI-MDgXg", class: :ranking__btn %>
+            <%= link_to image_tag("musi.jpg", class: :ranking__img), "https://youtu.be/DlZvI-MDgXg" %>
+          <%= link_to "2位 【絶対に】人に言ってはいけない禁句ワードTOP3", "https://youtu.be/Az60CC9hi00", class: :ranking__btn %>
+            <%= link_to image_tag("kinku.jpg", class: :ranking__img), "https://youtu.be/Az60CC9hi00" %>
+          <%= link_to "3位 【絶対NG】これやると一発で人間関係壊れる TOP3", "https://youtu.be/FD40JqIEYSs", class: :ranking__btn %>
+            <%= link_to image_tag("ningen.jpg", class: :ranking__img), "https://youtu.be/FD40JqIEYSs" %>
+        </div>
+      </div>
+
+      <div class="top2__ranking">
+        <div class="ranking">
+          <h3>◇転職系動画ランキング◇</h3>
+          <%= link_to "1位 【今の仕事に悩んでる方へ】あなたが転職で失敗する理由", "https://youtu.be/-PmTvPRJwPg", class: :ranking__btn %>
+            <%= link_to image_tag("sippai.jpg", class: :ranking__img), "https://youtu.be/-PmTvPRJwPg" %>
+          <%= link_to "2位 いますぐ辞めるべき会社ワースト3", "https://youtu.be/k_4cQfed1JI", class: :ranking__btn %>
+            <%= link_to image_tag("imayameru.jpg", class: :ranking__img), "https://youtu.be/k_4cQfed1JI" %>
+          <%= link_to "3位 日本人は全員転職すべき", "https://youtu.be/M_030Rdb7Ng", class: :ranking__btn %>
+            <%= link_to image_tag("tensyoku.jpg", class: :ranking__img), "https://youtu.be/M_030Rdb7Ng" %>
+        </div>
+        <div class="ranking">
+          <h3>◇マコなり社長再生数ランキング◇</h3>
+          <%= link_to "1位 身近にいる絶対に関わってはいけない人", "https://youtu.be/_-CssXA_o9M", class: :ranking__btn %>
+            <%= link_to image_tag("kakawaruna.jpg", class: :ranking__img), "https://youtu.be/_-CssXA_o9M" %>
+          <%= link_to "2位 【一瞬でバレる】仕事が出来ない人の話し方TOP3", "https://youtu.be/LyW7tmd8npk", class: :ranking__btn %>
+            <%= link_to image_tag("issyun.jpg", class: :ranking__img), "https://youtu.be/LyW7tmd8npk" %>
+          <%= link_to "3位 今すぐ家から捨てるべきモノ TOP5", "https://youtu.be/4qp0jnuZAZ8", class: :ranking__btn %>
+            <%= link_to image_tag("iekara.jpg", class: :ranking__img), "https://youtu.be/4qp0jnuZAZ8" %>
+        </div>
+        <div class="ranking">
+          <h3>◇個人的に好きな動画ランキング◇</h3>
+          <%= link_to "1位 絶対におかしい日本の常識10選", "https://youtu.be/glCIQBp1dJ8", class: :ranking__btn %>
+            <%= link_to image_tag("japan.jpg", class: :ranking__img), "https://youtu.be/glCIQBp1dJ8" %>
+          <%= link_to "2位 「常識人間」は成功しない", "https://youtu.be/L99WnfYCeXg", class: :ranking__btn %>
+            <%= link_to image_tag("zyosiki.jpg", class: :ranking__img), "https://youtu.be/L99WnfYCeXg" %>
+          <%= link_to "3位 LINEでこれやると人生終わり", "https://youtu.be/t-6tT7AXvgw", class: :ranking__btn %>
+            <%= link_to image_tag("zinsei.jpg", class: :ranking__img), "https://youtu.be/t-6tT7AXvgw" %>
+        </div>
+      </div>
     <% end %>
-    <div class="card__wrapper">
-      <%= render partial: 'tweet', collection: @tweets %>
-    </div>
   </div>
 </main>
