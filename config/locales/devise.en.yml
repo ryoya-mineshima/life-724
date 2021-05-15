@@ -1,5 +1,15 @@
 # Additional translations at https://github.com/heartcombo/devise/wiki/I18n
 
+activerecord:
+models:
+  user: ユーザー
+attributes:
+  user:
+    email: メールアドレス
+    password: パスワード
+    name: 名前
+    password_confirmation: パスワード(確認用）
+
 en:
   devise:
     confirmations:

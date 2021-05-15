@@ -8,6 +8,14 @@ class Tweet < ApplicationRecord
   end
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_one_attached :image
+
+  def self.search(search)
+    if search != ""
+      Tweet.where('content LIKE(?)', "%#{search}%")
+    else
+      Tweet.all
+    end
+  end
 end

@@ -1,0 +1,10 @@
+ja:
+  activerecord:
+    models:
+      tweet: 投稿
+    attributes:
+      tweet:
+        title: タイトル
+        content: コンテンツ
+        url: URL
+        image: 画像
