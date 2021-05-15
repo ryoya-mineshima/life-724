@@ -8,9 +8,7 @@ class CommentsController < ApplicationController
       @comments = @tweet.comments
       render "tweets/show" 
     end
-    
   end
-
 
   private
 
