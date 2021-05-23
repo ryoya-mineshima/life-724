@@ -94,7 +94,7 @@ a {
 /* WEB詳細 */
 
 .web__page{
-  background-color: #F5F5F5;
+  background: linear-gradient(#F5F5F5, #DCDCDC);
   margin-bottom: 100px;
   padding: 30px;
 }
@@ -181,6 +181,17 @@ form input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
+
+.samune{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 60px;
+}
+
+.samune__font:hover{
+  color: #DD0000;
+}
+
 
 .top__ranking{
   display: flex;
@@ -398,7 +409,7 @@ h3{
 .search__form {
   text-align: center;
   padding-top: 32px;
-  margin-bottom: 80px;
+  margin-bottom: 5px;
 }
 
 .search__form .search__input {

@@ -10,9 +10,13 @@
       </div>
 
       <%= form_with(url: search_tweets_path, local: true, method: :get, class: "search__form") do |form| %>
-        <%= form.text_field :keyword, placeholder: "投稿を検索する（コンテンツワードで検索）", class: "search__input" %>
+        <%= form.text_field :keyword, placeholder: "投稿を検索する（タイトルで検索）", class: "search__input" %>
         <%= form.submit "検索", class: "search__btn" %>
       <% end %>
+
+      <div class="samune">
+        <h3><%= link_to "【サムネ画像を作成したい方はこちらへ】", "http://urbanqee.com/doga/youtube-thumbnail-dl.php", class: "samune__font" %></h3>
+      </div>
 
       <div class="card__wrapper">
         <%= render partial: 'tweet', collection: @tweets %>
@@ -21,15 +25,15 @@
       <div class="web__page">
         <div class="web__title">
           <h2 class="text">
-            新規登録・ログインをして
+            生産性高く生きたい、楽しく仕事がしたい
             <br>
-            オススメのYouTube動画を投稿しよう！
+            そう思っていませんか？
             <br>
-            ログインするとみんなの投稿を
+            私はYouTubeを通して
             <br>
-            見ることができます！
+            人生を変えるきっかけを得ました。
             <br>
-            何か一つでもあなたの人生を変える
+            何か一つでもあなたの人生を変え
             <br>
             きっかけを提供したい。
             <br>
@@ -39,6 +43,9 @@
           </h2>
           <%= image_tag "top.jpg", class: :web__img %>
         </div>
+        ※新規登録・ログインをして
+        <br>
+        みんなのオススメYouTubeを共有しよう！
       </div>
 
       <div class="top__title">
