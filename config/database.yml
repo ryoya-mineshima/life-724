@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: life_724_production
-  username: life_724
-  password: <%= ENV['LIFE_724_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
