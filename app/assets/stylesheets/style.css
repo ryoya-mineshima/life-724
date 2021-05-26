@@ -133,6 +133,10 @@ a {
   color: #CC0000;
 }
 
+.samune__font:hover{
+  color: #DD0000;
+}
+
 .actions{
   margin-bottom: 40px;
 }
@@ -181,17 +185,6 @@ form input[type="submit"]:hover {
   justify-content: center;
   margin-bottom: 30px;
 }
-
-.samune{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 60px;
-}
-
-.samune__font:hover{
-  color: #DD0000;
-}
-
 
 .top__ranking{
   display: flex;

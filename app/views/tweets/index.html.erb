@@ -14,10 +14,6 @@
         <%= form.submit "検索", class: "search__btn" %>
       <% end %>
 
-      <div class="samune">
-        <h3><%= link_to "【サムネ画像を作成したい方はこちらへ】", "http://urbanqee.com/doga/youtube-thumbnail-dl.php", class: "samune__font" %></h3>
-      </div>
-
       <div class="card__wrapper">
         <%= render partial: 'tweet', collection: @tweets %>
       </div>
